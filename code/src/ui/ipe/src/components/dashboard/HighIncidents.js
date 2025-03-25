@@ -139,7 +139,7 @@ const HighIncidents = () => {
               onChange={handleUserInputChange}
               style={{ flex: 1, padding: '5px' }}
             />
-            <button onClick={handleSendMessage} style={{ padding: '5px 10px' }}>Send</button>
+            <button onClick={handleSendMessage} style={{ padding: '5px 10px', width: '120px', marginLeft: '5px' }}>Send</button>
           </div>
         </div>
       )}
