@@ -1,0 +1,81 @@
+[{
+    "incident_id": "INC001",
+    "description": "Database connection failure causing complete application outage.",
+    "impact": "Critical",
+    "status": "New"
+  },
+  {
+    "incident_id": "INC002",
+    "description": "Payment gateway integration failure, impacting all transactions.",
+    "impact": "High",
+    "status": "Assigned"
+  },
+  {
+    "incident_id": "INC003",
+    "description": "Slow loading of product pages, affecting user experience.",
+    "impact": "Medium",
+    "status": "In Progress"
+  },
+  {
+    "incident_id": "INC004",
+    "description": "Typo in a non-critical error message.",
+    "impact": "Low",
+    "status": "New"
+  },
+  {
+    "incident_id": "INC005",
+    "description": "User authentication failing for specific user group.",
+    "impact": "High",
+    "status": "Resolved",
+    "rca_document": "RCA-INC005.pdf",
+    "known_errors": ["KE-Auth01", "KE-Auth02", "KE-Auth03", "KE-Auth04", "KE-Auth05", "KE-Auth06", "KE-Auth07", "KE-Auth08", "KE-Auth09", "KE-Auth10"],
+    "work_arounds": ["WA-Auth01", "WA-Auth02", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth13", "WA-Auth14", "WA-Auth15", "WA-Auth16", "WA-Auth17", "WA-Auth18", "WA-Auth19", "WA-Auth20", "WA-Auth21", "WA-Auth22", "WA-Auth23", "WA-Auth24", "WA-Auth25"],
+    "cis": ["CI-AuthServer", "CI-LDAP", "CI-Database", "CI-Firewall", "CI-LoadBalancer", "CI-API", "CI-NetworkSwitch", "CI-UserGroup", "CI-Application", "CI-LoggingServer"],
+    "knowledge_sources": ["KS-AuthServer01", "KS-LDAP02", "KS-Database03", "KS-Firewall04", "KS-LoadBalancer05", "KS-API06", "KS-NetworkSwitch07", "KS-UserGroup08", "KS-Application09", "KS-LoggingServer10", "KS-AuthServer11", "KS-LDAP12", "KS-Database13", "KS-Firewall14", "KS-LoadBalancer15", "KS-API16", "KS-NetworkSwitch17", "KS-UserGroup18", "KS-Application19", "KS-LoggingServer20", "KS-AuthServer21","KS-LDAP22","KS-Database23","KS-Firewall24","KS-LoadBalancer25"],
+    "troubleshooting_guide": "TSG-INC005.pdf",
+    "system_architecture_document": "SAD-INC005.pdf"
+  },
+  {
+    "incident_id": "INC006",
+    "description": "Scheduled report generation failing.",
+    "impact": "Medium",
+    "status": "Closed",
+    "rca_document": "RCA-INC006.pdf",
+    "known_errors": ["KE-Report01", "KE-Report02", "KE-Report03", "KE-Report04", "KE-Report05", "KE-Report06", "KE-Report07", "KE-Report08", "KE-Report09", "KE-Report10"],
+    "work_arounds": ["WA-Report01", "WA-Report02", "WA-Report03", "WA-Report04", "WA-Report05", "WA-Report06", "WA-Report07", "WA-Report08", "WA-Report09", "WA-Report10", "WA-Report11", "WA-Report12", "WA-Report13", "WA-Report14", "WA-Report15", "WA-Report16", "WA-Report17", "WA-Report18", "WA-Report19", "WA-Report20", "WA-Report21", "WA-Report22", "WA-Report23", "WA-Report24", "WA-Report25"],
+    "cis": ["CI-ReportServer", "CI-ReportDatabase", "CI-JobScheduler", "CI-EmailService", "CI-FileStorage", "CI-API", "CI-Network", "CI-Application", "CI-Logging", "CI-OS"],
+    "knowledge_sources": ["KS-ReportServer01", "KS-ReportDatabase02", "KS-JobScheduler03", "KS-EmailService04", "KS-FileStorage05", "KS-API06", "KS-Network07", "KS-Application08", "KS-Logging09", "KS-OS10", "KS-ReportServer11", "KS-ReportDatabase12", "KS-JobScheduler13", "KS-EmailService14", "KS-FileStorage15", "KS-API16", "KS-Network17", "KS-Application18", "KS-Logging19", "KS-OS20", "KS-ReportServer21", "KS-ReportDatabase22", "KS-JobScheduler23", "KS-EmailService24", "KS-FileStorage25"],
+    "troubleshooting_guide": "TSG-INC006.pdf",
+    "system_architecture_document": "SAD-INC006.pdf"
+  },
+  {
+    "incident_id": "INC007",
+    "description": "Image upload functionality not working.",
+    "impact": "Medium",
+    "status": "Pending Approval"
+  },
+  {
+    "incident_id": "INC008",
+    "description": "Application crashing on mobile devices.",
+    "impact": "Critical",
+    "status": "New"
+  },
+  {
+    "incident_id": "INC009",
+    "description": "API endpoint returning incorrect data.",
+    "impact": "High",
+    "status": "Assigned"
+  },
+  {
+    "incident_id": "INC010",
+    "description": "Search functionality returning irrelevant results.",
+    "impact": "Medium",
+    "status": "In Progress"
+  },
+  {
+    "incident_id": "INC011",
+    "description": "Minor UI alignment issues.",
+    "impact": "Low",
+    "status": "New"
+  }
+]
