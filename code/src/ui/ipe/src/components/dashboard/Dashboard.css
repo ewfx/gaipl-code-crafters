@@ -1,7 +1,6 @@
-.dashboard {
-    padding: 20px;
+h1 {
+    color:rgb(54, 113, 123);
 }
-
 .navigation {
     display: flex;
     gap: 10px;
@@ -11,13 +10,8 @@
 .navigation button {
     padding: 10px 20px;
     border: none;
-    background-color: #f0f0f0;
-    cursor: pointer;
-}
-
-.navigation button.active {
     background-color: #007bff;
-    color: white;
+    cursor: pointer;
 }
 
 .content {
