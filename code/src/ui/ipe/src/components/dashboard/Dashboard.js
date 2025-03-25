@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import HighIncidents from './HighIncidents';
 import './Dashboard.css';
+import ActiveIncidents from './ActiveIncidents';
 
 const Dashboard = () => {
     const [activeTab, setActiveTab] = useState('activeIncidents');
@@ -7,9 +9,9 @@ const Dashboard = () => {
     const renderContent = () => {
         switch (activeTab) {
             case 'activeIncidents':
-                return <div>Active Incidents Content</div>;
+                return <div><ActiveIncidents /></div>;
             case 'highPriorityIncidents':
-                return <div>High Priority Incidents Content</div>;
+                return <div><HighIncidents /></div>;
             default:
                 return <div>Select a tab to view content</div>;
         }
