@@ -11,10 +11,13 @@ h1 {
 .navigation button {
     padding: 10px 20px;
     border: none;
-    background-color: #007bff;
+    background-color: #96c0f4;
     cursor: pointer;
 }
 
+.navigation button.active {
+    background-color: #007bff;;
+}
 .content {
     padding: 20px;
     border: 1px solid #ddd;
