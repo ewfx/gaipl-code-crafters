@@ -38,19 +38,20 @@ Describe the major technical or non-technical challenges your team encountered.
 ## 🏃 How to Run
 1. Clone the repository  
    ```sh
-   git clone https://github.com/your-repo.git
+   git clone https://github.com/ewfx/gaipl-code-crafters
    ```
 2. Install dependencies  
-   ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
-   ```
+   - Navigate to code/ui/ipe directory
+   - Do npm install
+   
 3. Run the project  
-   ```sh
-   npm start  # or python app.py
-   ```
+   - Run npm start
+
+4. For Sign in
+   - Use username(admin) and password(admin123)
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
+- 🔹 Frontend: React
 - 🔹 Backend: Node.js / FastAPI / Django
 - 🔹 Database: PostgreSQL / Firebase
 - 🔹 Other: OpenAI API / Twilio / Stripe
