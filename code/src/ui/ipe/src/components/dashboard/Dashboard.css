@@ -1,0 +1,27 @@
+.dashboard {
+    padding: 20px;
+}
+
+.navigation {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.navigation button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.navigation button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.content {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
