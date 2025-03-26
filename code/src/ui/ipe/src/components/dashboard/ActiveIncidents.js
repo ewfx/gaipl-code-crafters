@@ -105,7 +105,7 @@ const ActiveIncidents = () => {
       <table>
         <thead>
           <tr>
-            <th>Chat</th>
+            <th>AI Assist</th>
             <th>Incident ID</th>
             <th>Description - RCA</th>
             <th>Impact</th>
@@ -115,11 +115,15 @@ const ActiveIncidents = () => {
         <tbody>
           {filteredIncidents.map((incident) => (
             <tr key={incident.incident_id}>
-              <td onClick={() => handleIncidentClick(incident)}>
+              <td style={{
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    backgroundColor: '#d8f3fc',
+                  }} onClick={() => handleIncidentClick(incident)}>
                 <span
                   style={{
                     cursor: 'pointer',
-                    fontSize: '16px',
+                    fontSize: '30px'
                   }}
                   title="Open Chat"
 
@@ -189,6 +193,7 @@ const ActiveIncidents = () => {
               border: 'none',
               borderRadius: '4px',
               cursor: 'pointer',
+              width: '150px'
             }}
           >
             Close

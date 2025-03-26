@@ -19,7 +19,7 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard">
-            <h1>Platform Environment Dashboard</h1>
+            <h1>AI Enabled Integrated Platform Environment</h1>
             <nav className="navigation">
                 <button onClick={() => setActiveTab('activeIncidents')} className={activeTab === 'activeIncidents' ? 'active' : ''}>
                     Active Incidents
