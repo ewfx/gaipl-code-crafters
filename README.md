@@ -13,9 +13,9 @@
 
 ---
 
-# High Incidents Dashboard
+# IPE Incidents Dashboard
 
-The **High Incidents Dashboard** is a React-based application that provides a user-friendly interface for monitoring and managing high-priority incidents. It includes features like filtering incidents, viewing detailed logs, and interacting with an AI-powered chat system for root cause analysis (RCA) and recommendations.
+The **IPE Incidents Dashboard** is a React-based application that provides a user-friendly interface for monitoring and managing high-priority incidents. It includes features like filtering incidents, viewing detailed logs, and interacting with an AI-powered chat system for root cause analysis (RCA) and recommendations.
 
 ---
 
