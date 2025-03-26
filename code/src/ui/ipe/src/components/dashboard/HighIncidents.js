@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import info from './incidents.json';
+import chatWithGroq from '../../groq';
 import './HighIncidents.css';
 const HighIncidents = () => {
   const [incidents, setIncidents] = useState([]);
@@ -52,20 +53,22 @@ const HighIncidents = () => {
   };
 
   // Simulate AI response (replace with actual AI integration)
-  const simulateAIResponse = (message, incident) => {
-    const lowerCaseMessage = message.toLowerCase();
-    if (lowerCaseMessage.includes("impact")) {
-      return `The impact of this incident (${incident.incident_id}) is ${incident.impact}.`;
-    } else if (lowerCaseMessage.includes("status")) {
-      return `The status of this incident (${incident.incident_id}) is ${incident.status}.`;
-    } else if (lowerCaseMessage.includes("description")) {
-      return `The description of this incident (${incident.incident_id}) is: ${incident.description}`;
-    } else if (lowerCaseMessage.includes("workarounds") && incident.work_arounds) {
-      return `Workarounds for incident ${incident.incident_id}: ${incident.work_arounds.join(", ")}`
-    }
-    else {
-      return "I'm a simple simulation, I can only answer about impact, status, description, and workarounds if they exist.";
-    }
+  const simulateAIResponse = async (message, incident) => {
+    // const lowerCaseMessage = message.toLowerCase();
+    const response = await chatWithGroq(message)
+    return response;
+    // if (lowerCaseMessage.includes("impact")) {
+    //   return `The impact of this incident (${incident.incident_id}) is ${incident.impact}.`;
+    // } else if (lowerCaseMessage.includes("status")) {
+    //   return `The status of this incident (${incident.incident_id}) is ${incident.status}.`;
+    // } else if (lowerCaseMessage.includes("description")) {
+    //   return `The description of this incident (${incident.incident_id}) is: ${incident.description}`;
+    // } else if (lowerCaseMessage.includes("workarounds") && incident.work_arounds) {
+    //   return `Workarounds for incident ${incident.incident_id}: ${incident.work_arounds.join(", ")}`
+    // }
+    // else {
+    //   return "I'm a simple simulation, I can only answer about impact, status, description, and workarounds if they exist.";
+    // }
   };
 
   return (
