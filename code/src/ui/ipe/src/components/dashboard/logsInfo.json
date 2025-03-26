@@ -1,0 +1,240 @@
+[
+    {
+      "incident_id": "INC001",
+      "description": "Database connection failure causing complete application outage.",
+      "impact": "Critical",
+      "status": "New",
+      "logs": [
+        "ERROR: Database connection timed out.",
+        "CRITICAL: Application server unable to connect to database.",
+        "WARNING: Connection pool exhausted.",
+        "INFO: Database server restarting.",
+        "ERROR: SQLSTATE[08006] [7] could not connect to server: Connection refused.",
+        "ERROR: Application log - Database transaction failed.",
+        "CRITICAL: Application crashed due to database failure.",
+        "ERROR: Connection to database lost.",
+        "WARNING: Slow query detected.",
+        "ERROR: Database server is unreachable.",
+        "INFO: Database backup initiated.",
+        "ERROR: Database lock contention detected.",
+        "ERROR: Database schema mismatch.",
+        "CRITICAL: Application unable to start due to database error.",
+        "ERROR: Failed to execute SQL query."
+      ]
+    },
+    {
+      "incident_id": "INC002",
+      "description": "Payment gateway integration failure, impacting all transactions.",
+      "impact": "High",
+      "status": "Assigned",
+      "logs": [
+        "ERROR: Payment gateway API returned 500 Internal Server Error.",
+        "ERROR: Payment transaction failed.",
+        "WARNING: Invalid payment gateway response.",
+        "ERROR: Connection to payment gateway timed out.",
+        "CRITICAL: All payment transactions are failing.",
+        "ERROR: Payment gateway integration error.",
+        "ERROR: Invalid API key used for payment gateway.",
+        "WARNING: Payment gateway service is experiencing high latency.",
+        "ERROR: Payment gateway rejected transaction.",
+        "ERROR: Payment gateway API returned 400 Bad Request.",
+        "INFO: Payment gateway service restarted.",
+        "ERROR: Payment gateway server is unreachable.",
+        "CRITICAL: Payment processing is completely down.",
+        "ERROR: Currency conversion error during payment.",
+        "ERROR: Payment gateway signature verification failed."
+      ]
+    },
+    {
+      "incident_id": "INC003",
+      "description": "Slow loading of product pages, affecting user experience.",
+      "impact": "Medium",
+      "status": "In Progress",
+      "logs": [
+        "WARNING: Product page loading time exceeded 5 seconds.",
+        "INFO: Image assets loading slowly.",
+        "WARNING: Database query for product data is slow.",
+        "INFO: CDN latency detected.",
+        "WARNING: High CPU utilization on web server.",
+        "INFO: Network latency to database.",
+        "WARNING: Unoptimized image sizes.",
+        "INFO: Javascript files taking long to load.",
+        "WARNING: Large number of database connections.",
+        "INFO: Cache miss on product data.",
+        "WARNING: Slow API calls to product service.",
+        "INFO: High memory usage on application server.",
+        "WARNING: Inefficient CSS loading.",
+        "INFO: Database index missing.",
+        "WARNING: Slow rendering of product images."
+      ]
+    },
+    {
+      "incident_id": "INC004",
+      "description": "Typo in a non-critical error message.",
+      "impact": "Low",
+      "status": "New",
+      "logs": [
+        "INFO: Error message displayed with typo: 'incorret' instead of 'incorrect'.",
+        "DEBUG: UI component displaying incorrect error message.",
+        "INFO: Spelling error found in error message string.",
+        "DEBUG: String resource file contains typo.",
+        "INFO: Typo detected in client-side error message.",
+        "DEBUG: Error message key 'ERROR_MESSAGE_TYPO' has incorrect value.",
+        "INFO: Small UI text correction needed.",
+        "DEBUG: Localization file has spelling error.",
+        "INFO: Minor text fix required.",
+        "DEBUG: String comparison failed due to typo.",
+        "INFO: User interface displaying misspelled word.",
+        "DEBUG: Code review required for error message strings.",
+        "INFO: Non-critical user facing text error.",
+        "DEBUG: Text rendering issue.",
+        "INFO: Minor UI text mismatch."
+      ]
+    },
+    {
+      "incident_id": "INC005",
+      "description": "User authentication failing for specific user group.",
+      "impact": "High",
+      "status": "Resolved",
+      "rca_document": "RCA-INC005.pdf",
+      "known_errors": ["KE-Auth01", "KE-Auth02", "KE-Auth03", "KE-Auth04", "KE-Auth05", "KE-Auth06", "KE-Auth07", "KE-Auth08", "KE-Auth09", "KE-Auth10"],
+      "work_arounds": ["WA-Auth01", "WA-Auth02", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth13", "WA-Auth14", "WA-Auth15"],
+      "cis": ["CI-AuthServer", "CI-LDAP", "CI-Database", "CI-Firewall", "CI-LoadBalancer", "CI-API", "CI-NetworkSwitch", "CI-UserGroup", "CI-Application", "CI-LoggingServer"],
+      "knowledge_sources": ["KS-AuthServer01", "KS-LDAP02", "KS-Database03", "KS-Firewall04", "KS-LoadBalancer05", "KS-API06", "KS-NetworkSwitch07", "KS-UserGroup08", "KS-Application09", "KS-LoggingServer10", "KS-AuthServer11", "KS-LDAP12", "KS-Database13", "KS-Firewall14", "KS-LoadBalancer15", "KS-API16", "KS-NetworkSwitch17", "KS-UserGroup18", "KS-Application19", "KS-LoggingServer20", "KS-AuthServer21","KS-LDAP22","KS-Database23","KS-Firewall24","KS-LoadBalancer25"],
+      "troubleshooting_guide": "TSG-INC005.pdf",
+      "system_architecture_document": "SAD-INC005.pdf",
+      "logs": [
+        "ERROR: Authentication failed for user group 'Premium Users'.",
+        "WARNING: LDAP server returned invalid credentials.",
+        "ERROR: Database query for user group data failed.",
+        "INFO: Firewall rules blocking authentication requests.",
+        "ERROR: Load balancer not routing authentication traffic correctly.",
+        "CRITICAL: User authentication system is down for specific group.",
+        "ERROR: API endpoint for authentication returned 500.",
+        "WARNING: Network switch configuration error.",
+        "ERROR: Application logic error in authentication module.",
+        "INFO: Logging server not receiving authentication logs.",
+        "ERROR: Invalid user group ID.",
+        "WARNING: Token validation failed.",
+        "ERROR: Database connection error during authentication.",
+        "CRITICAL: User authentication service is unavailable.",
+        "ERROR: User profile not found."
+      ]
+    },
+    {
+        "incident_id": "INC006",
+        "description": "User authentication failing for specific user group.",
+        "impact": "High",
+        "status": "Resolved",
+        "rca_document": "RCA-INC005.pdf",
+        "known_errors": ["KE-Auth01", "KE-Auth02", "KE-Auth03", "KE-Auth04", "KE-Auth05", "KE-Auth06", "KE-Auth07", "KE-Auth08", "KE-Auth09", "KE-Auth10"],
+        "work_arounds": ["WA-Auth01", "WA-Auth02", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth13", "WA-Auth14", "WA-Auth15"],
+        "cis": ["CI-AuthServer", "CI-LDAP", "CI-Database", "CI-Firewall", "CI-LoadBalancer", "CI-API", "CI-NetworkSwitch", "CI-UserGroup", "CI-Application", "CI-LoggingServer"],
+        "knowledge_sources": ["KS-AuthServer01", "KS-LDAP02", "KS-Database03", "KS-Firewall04", "KS-LoadBalancer05", "KS-API06", "KS-NetworkSwitch07", "KS-UserGroup08", "KS-Application09", "KS-LoggingServer10", "KS-AuthServer11", "KS-LDAP12", "KS-Database13", "KS-Firewall14", "KS-LoadBalancer15", "KS-API16", "KS-NetworkSwitch17", "KS-UserGroup18", "KS-Application19", "KS-LoggingServer20", "KS-AuthServer21","KS-LDAP22","KS-Database23","KS-Firewall24","KS-LoadBalancer25"],
+        "troubleshooting_guide": "TSG-INC005.pdf",
+        "system_architecture_document": "SAD-INC005.pdf",
+        "logs": [
+          "ERROR: Authentication failed for user group 'Premium Users'.",
+          "WARNING: LDAP server returned invalid credentials.",
+          "ERROR: Database query for user group data failed.",
+          "INFO: Firewall rules blocking authentication requests."
+        ]
+      },
+      {
+        "incident_id": "INC007",
+        "description": "User authentication failing for specific user group.",
+        "impact": "High",
+        "status": "Resolved",
+        "rca_document": "RCA-INC005.pdf",
+        "known_errors": ["KE-Auth01", "KE-Auth02", "KE-Auth03", "KE-Auth04", "KE-Auth05", "KE-Auth06", "KE-Auth07", "KE-Auth08", "KE-Auth09", "KE-Auth10"],
+        "work_arounds": ["WA-Auth01", "WA-Auth02", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth13", "WA-Auth14", "WA-Auth15"],
+        "cis": ["CI-AuthServer", "CI-LDAP", "CI-Database", "CI-Firewall", "CI-LoadBalancer", "CI-API", "CI-NetworkSwitch", "CI-UserGroup", "CI-Application", "CI-LoggingServer"],
+        "knowledge_sources": ["KS-AuthServer01", "KS-LDAP02", "KS-Database03", "KS-Firewall04", "KS-LoadBalancer05", "KS-API06", "KS-NetworkSwitch07", "KS-UserGroup08", "KS-Application09", "KS-LoggingServer10", "KS-AuthServer11", "KS-LDAP12", "KS-Database13", "KS-Firewall14", "KS-LoadBalancer15", "KS-API16", "KS-NetworkSwitch17", "KS-UserGroup18", "KS-Application19", "KS-LoggingServer20", "KS-AuthServer21","KS-LDAP22","KS-Database23","KS-Firewall24","KS-LoadBalancer25"],
+        "troubleshooting_guide": "TSG-INC005.pdf",
+        "system_architecture_document": "SAD-INC005.pdf",
+        "logs": [
+          "WARNING: Network switch configuration error.",
+          "ERROR: Application logic error in authentication module.",
+          "INFO: Logging server not receiving authentication logs.",
+          "ERROR: Invalid user group ID.",
+          "WARNING: Token validation failed.",
+          "ERROR: Database connection error during authentication.",
+          "CRITICAL: User authentication service is unavailable.",
+          "ERROR: User profile not found."
+        ]
+      },
+      {
+        "incident_id": "INC008",
+        "description": "User authentication failing for specific user group.",
+        "impact": "High",
+        "status": "Resolved",
+        "rca_document": "RCA-INC005.pdf",
+        "known_errors": ["KE-Auth01", "KE-Auth02", "KE-Auth03", "KE-Auth04", "KE-Auth05", "KE-Auth06", "KE-Auth07", "KE-Auth08", "KE-Auth09", "KE-Auth10"],
+        "work_arounds": ["WA-Auth01", "WA-Auth02", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth13", "WA-Auth14", "WA-Auth15"],
+        "cis": ["CI-AuthServer", "CI-LDAP", "CI-Database", "CI-Firewall", "CI-LoadBalancer", "CI-API", "CI-NetworkSwitch", "CI-UserGroup", "CI-Application", "CI-LoggingServer"],
+        "knowledge_sources": ["KS-AuthServer01", "KS-LDAP02", "KS-Database03", "KS-Firewall04", "KS-LoadBalancer05", "KS-API06", "KS-NetworkSwitch07", "KS-UserGroup08", "KS-Application09", "KS-LoggingServer10", "KS-AuthServer11", "KS-LDAP12", "KS-Database13", "KS-Firewall14", "KS-LoadBalancer15", "KS-API16", "KS-NetworkSwitch17", "KS-UserGroup18", "KS-Application19", "KS-LoggingServer20", "KS-AuthServer21","KS-LDAP22","KS-Database23","KS-Firewall24","KS-LoadBalancer25"],
+        "troubleshooting_guide": "TSG-INC005.pdf",
+        "system_architecture_document": "SAD-INC005.pdf",
+        "logs": [
+          "WARNING: Network switch configuration error.",
+          "ERROR: Application logic error in authentication module.",
+          "INFO: Logging server not receiving authentication logs.",
+          "ERROR: Invalid user group ID."
+        ]
+      },
+      {
+        "incident_id": "INC009",
+        "description": "User authentication failing for specific user group.",
+        "impact": "High",
+        "status": "Resolved",
+        "rca_document": "RCA-INC005.pdf",
+        "known_errors": ["KE-Auth01", "KE-Auth02", "KE-Auth03", "KE-Auth04", "KE-Auth05", "KE-Auth06", "KE-Auth07", "KE-Auth08", "KE-Auth09", "KE-Auth10"],
+        "work_arounds": ["WA-Auth01", "WA-Auth02", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth13", "WA-Auth14", "WA-Auth15"],
+        "cis": ["CI-AuthServer", "CI-LDAP", "CI-Database", "CI-Firewall", "CI-LoadBalancer", "CI-API", "CI-NetworkSwitch", "CI-UserGroup", "CI-Application", "CI-LoggingServer"],
+        "knowledge_sources": ["KS-AuthServer01", "KS-LDAP02", "KS-Database03", "KS-Firewall04", "KS-LoadBalancer05", "KS-API06", "KS-NetworkSwitch07", "KS-UserGroup08", "KS-Application09", "KS-LoggingServer10", "KS-AuthServer11", "KS-LDAP12", "KS-Database13", "KS-Firewall14", "KS-LoadBalancer15", "KS-API16", "KS-NetworkSwitch17", "KS-UserGroup18", "KS-Application19", "KS-LoggingServer20", "KS-AuthServer21","KS-LDAP22","KS-Database23","KS-Firewall24","KS-LoadBalancer25"],
+        "troubleshooting_guide": "TSG-INC005.pdf",
+        "system_architecture_document": "SAD-INC005.pdf",
+        "logs": [
+          "WARNING: Network switch configuration error.",
+          "ERROR: Application logic error in authentication module.",
+          "INFO: Logging server not receiving authentication logs.",
+          "ERROR: Invalid user group ID."
+        ]
+      },
+      {
+        "incident_id": "INC010",
+        "description": "User authentication failing for specific user group.",
+        "impact": "High",
+        "status": "Resolved",
+        "rca_document": "RCA-INC005.pdf",
+        "known_errors": ["KE-Auth01", "KE-Auth02", "KE-Auth03", "KE-Auth04", "KE-Auth05", "KE-Auth06", "KE-Auth07", "KE-Auth08", "KE-Auth09", "KE-Auth10"],
+        "work_arounds": ["WA-Auth01", "WA-Auth02", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth13", "WA-Auth14", "WA-Auth15"],
+        "cis": ["CI-AuthServer", "CI-LDAP", "CI-Database", "CI-Firewall", "CI-LoadBalancer", "CI-API", "CI-NetworkSwitch", "CI-UserGroup", "CI-Application", "CI-LoggingServer"],
+        "knowledge_sources": ["KS-AuthServer01", "KS-LDAP02", "KS-Database03", "KS-Firewall04", "KS-LoadBalancer05", "KS-API06", "KS-NetworkSwitch07", "KS-UserGroup08", "KS-Application09", "KS-LoggingServer10", "KS-AuthServer11", "KS-LDAP12", "KS-Database13", "KS-Firewall14", "KS-LoadBalancer15", "KS-API16", "KS-NetworkSwitch17", "KS-UserGroup18", "KS-Application19", "KS-LoggingServer20", "KS-AuthServer21","KS-LDAP22","KS-Database23","KS-Firewall24","KS-LoadBalancer25"],
+        "troubleshooting_guide": "TSG-INC005.pdf",
+        "system_architecture_document": "SAD-INC005.pdf",
+        "logs": [
+          "WARNING: Network switch configuration error.",
+          "ERROR: Application logic error in authentication module.",
+          "INFO: Logging server not receiving authentication logs."
+        ]
+      },
+      {
+        "incident_id": "INC011",
+        "description": "User authentication failing for specific user group.",
+        "impact": "High",
+        "status": "Resolved",
+        "rca_document": "RCA-INC005.pdf",
+        "known_errors": ["KE-Auth01", "KE-Auth02", "KE-Auth03", "KE-Auth04", "KE-Auth05", "KE-Auth06", "KE-Auth07", "KE-Auth08", "KE-Auth09", "KE-Auth10"],
+        "work_arounds": ["WA-Auth01", "WA-Auth02", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth03", "WA-Auth04", "WA-Auth05", "WA-Auth06", "WA-Auth07", "WA-Auth08", "WA-Auth09", "WA-Auth10", "WA-Auth11", "WA-Auth12", "WA-Auth13", "WA-Auth14", "WA-Auth15"],
+        "cis": ["CI-AuthServer", "CI-LDAP", "CI-Database", "CI-Firewall", "CI-LoadBalancer", "CI-API", "CI-NetworkSwitch", "CI-UserGroup", "CI-Application", "CI-LoggingServer"],
+        "knowledge_sources": ["KS-AuthServer01", "KS-LDAP02", "KS-Database03", "KS-Firewall04", "KS-LoadBalancer05", "KS-API06", "KS-NetworkSwitch07", "KS-UserGroup08", "KS-Application09", "KS-LoggingServer10", "KS-AuthServer11", "KS-LDAP12", "KS-Database13", "KS-Firewall14", "KS-LoadBalancer15", "KS-API16", "KS-NetworkSwitch17", "KS-UserGroup18", "KS-Application19", "KS-LoggingServer20", "KS-AuthServer21","KS-LDAP22","KS-Database23","KS-Firewall24","KS-LoadBalancer25"],
+        "troubleshooting_guide": "TSG-INC005.pdf",
+        "system_architecture_document": "SAD-INC005.pdf",
+        "logs": [
+          "ERROR: Invalid user group ID.",
+          "WARNING: Token validation failed.",
+          "ERROR: Database connection error during authentication."
+        ]
+      }
+]
