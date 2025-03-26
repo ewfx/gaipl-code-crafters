@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import info from './incidents.json';
+import logsInfo from './logsInfo.json';
 import chatWithGroq from '../../groq';
 import './HighIncidents.css';
 
@@ -30,9 +31,14 @@ const ActiveIncidents = () => {
     return statusMatch && impactMatch;
   });
 
-  const handleIncidentClick = (incident) => {
+  const handleIncidentClick = async (incident) => {
+    console.log('inc 1st', incident);
+    console.log('logsInfo 1st', logsInfo);
+    const logsData = logsInfo.filter((item) => incident.incident_id === item.incident_id);
+    console.log('inc', JSON.stringify(logsData[0].logs));
+    const response = await chatWithGroq(`Analyze RCA ${incident.description} and error logs as ${JSON.stringify(logsData[0].logs)} to identify root cause and provide recommended solutions with in 10lines`)
     setSelectedIncident(incident);
-    setChatMessages([]); // Clear chat on new incident selection
+    setChatMessages([{text:response}]);
     setIsModalOpen(true); // Open the modal
   };
 
@@ -40,25 +46,32 @@ const ActiveIncidents = () => {
     setUserInput(e.target.value);
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (userInput.trim() && selectedIncident) {
       const userMessage = { text: userInput, sender: 'user' };
       setChatMessages((prevMessages) => [...prevMessages, userMessage]);
 
-      // Simulate AI response (replace with actual AI integration)
-      const aiResponse = simulateAIResponse(userInput, selectedIncident);
-      const aiMessage = { text: aiResponse, sender: 'ai' };
-      setChatMessages((prevMessages) => [...prevMessages, aiMessage]);
+      try {
+        // Format history for Groq API
+        const formattedHistory = chatMessages
+          .map((message) => `${message.sender}: ${message.text}`)
+          .join('\n');
+
+        const prompt = `${formattedHistory}\nuser: ${userInput}\nai: in 3 lines`; // Add user input to prompt
+
+        const aiResponse = await chatWithGroq(prompt); // Send the whole prompt including history
+
+        const aiMessage = { text: aiResponse, sender: 'ai' };
+        setChatMessages((prevMessages) => [...prevMessages, aiMessage]);
+      } catch (error) {
+        console.error('Error with Groq API:', error);
+        // Handle error, e.g., display an error message
+      }
 
       setUserInput('');
     }
   };
 
-  const simulateAIResponse = async (message, incident) => {
-    const lowerCaseMessage = message.toLowerCase();
-    const response = await chatWithGroq(message);
-    return response
-  };
 
   const closeModal = () => {
     setIsModalOpen(false);
