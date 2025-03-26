@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import info from './incidents.json';
 import chatWithGroq from '../../groq';
 import './HighIncidents.css';
+
 const HighIncidents = () => {
   const [incidents, setIncidents] = useState([]);
   const [filterStatus, setFilterStatus] = useState('All');
@@ -9,10 +10,10 @@ const HighIncidents = () => {
   const [selectedIncident, setSelectedIncident] = useState(null);
   const [chatMessages, setChatMessages] = useState([]);
   const [userInput, setUserInput] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const chatWindowRef = useRef(null);
 
   useEffect(() => {
-    // Replace with your actual API call or data fetching logic
     const fetchedIncidents = info;
     setIncidents(fetchedIncidents);
   }, []);
@@ -32,6 +33,7 @@ const HighIncidents = () => {
   const handleIncidentClick = (incident) => {
     setSelectedIncident(incident);
     setChatMessages([]); // Clear chat on new incident selection
+    setIsModalOpen(true); // Open the modal
   };
 
   const handleUserInputChange = (e) => {
@@ -57,23 +59,16 @@ const HighIncidents = () => {
     // const lowerCaseMessage = message.toLowerCase();
     const response = await chatWithGroq(message)
     return response;
-    // if (lowerCaseMessage.includes("impact")) {
-    //   return `The impact of this incident (${incident.incident_id}) is ${incident.impact}.`;
-    // } else if (lowerCaseMessage.includes("status")) {
-    //   return `The status of this incident (${incident.incident_id}) is ${incident.status}.`;
-    // } else if (lowerCaseMessage.includes("description")) {
-    //   return `The description of this incident (${incident.incident_id}) is: ${incident.description}`;
-    // } else if (lowerCaseMessage.includes("workarounds") && incident.work_arounds) {
-    //   return `Workarounds for incident ${incident.incident_id}: ${incident.work_arounds.join(", ")}`
-    // }
-    // else {
-    //   return "I'm a simple simulation, I can only answer about impact, status, description, and workarounds if they exist.";
-    // }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedIncident(null);
   };
 
   return (
     <div>
-      <h1>Incident Dashboard</h1>
+      <h1>Active Incident Dashboard</h1>
       <div>
         <label>Filter by Status:</label>
         <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)}>
@@ -95,10 +90,10 @@ const HighIncidents = () => {
           <option value="Low">Low</option>
         </select>
       </div>
-
       <table>
         <thead>
           <tr>
+            <th>Chat</th>
             <th>Incident ID</th>
             <th>Description - RCA</th>
             <th>Impact</th>
@@ -107,7 +102,19 @@ const HighIncidents = () => {
         </thead>
         <tbody>
           {filteredIncidents.map((incident) => (
-            <tr key={incident.incident_id} onClick={() => handleIncidentClick(incident)}>
+            <tr key={incident.incident_id}>
+              <td onClick={() => handleIncidentClick(incident)}>
+                <span
+                  style={{
+                    cursor: 'pointer',
+                    fontSize: '16px',
+                  }}
+                  title="Open Chat"
+
+                >
+                  💬
+                </span>
+              </td>
               <td>{incident.incident_id}</td>
               <td>{incident.description}</td>
               <td>{incident.impact}</td>
@@ -117,8 +124,21 @@ const HighIncidents = () => {
         </tbody>
       </table>
 
-      {selectedIncident && (
-        <div style={{ marginTop: '20px' }}>
+      {isModalOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            backgroundColor: 'white',
+            border: '1px solid #ccc',
+            borderRadius: '8px',
+            padding: '20px',
+            zIndex: 1000,
+            width: '70%'
+          }}
+        >
           <h2>Incident Chat ({selectedIncident.incident_id})</h2>
           <div
             ref={chatWindowRef}
@@ -127,6 +147,7 @@ const HighIncidents = () => {
               height: '200px',
               overflowY: 'auto',
               padding: '10px',
+              marginBottom: '10px',
             }}
           >
             {chatMessages.map((message, index) => (
@@ -135,16 +156,47 @@ const HighIncidents = () => {
               </div>
             ))}
           </div>
-          <div style={{ display: 'flex', marginTop: '10px' }}>
+          <div style={{ display: 'flex', marginBottom: '10px' }}>
             <input
               type="text"
               value={userInput}
               onChange={handleUserInputChange}
               style={{ flex: 1, padding: '5px' }}
+              placeholder='Ask Question realated to incident'
             />
-            <button onClick={handleSendMessage} style={{ padding: '5px 10px', width: '120px', marginLeft: '5px' }}>Send</button>
+            <button onClick={handleSendMessage} style={{ padding: '5px 10px', marginLeft: '5px', width: '150px' }}>
+              Send
+            </button>
           </div>
+          <button
+            onClick={closeModal}
+            style={{
+              padding: '5px 10px',
+              backgroundColor: '#f44336',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+            }}
+          >
+            Close
+          </button>
         </div>
+      )}
+
+      {isModalOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            zIndex: 999,
+          }}
+          onClick={closeModal}
+        ></div>
       )}
     </div>
   );
